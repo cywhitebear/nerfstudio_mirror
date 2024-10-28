@@ -36,6 +36,7 @@ def main(args):
         '--auto_scale_poses False',
         '--center_method none',
         '--orientation_method none',
+        '--masks_path "dbscan_masks"',
     ]
 
     full_cmds = ' '.join(cmds)  

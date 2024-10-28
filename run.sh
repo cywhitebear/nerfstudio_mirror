@@ -72,7 +72,10 @@ if [ "$skip_preprocess" = false ]; then
   python arkit_utils/prepare_nerfstudio_dataset.py --input_path ${input_base_path}
 
   echo "Dataset preparation completed."
+
+  echo "6. Detect mirrors in the dataset"
+  python arkit_utils/detect_mirror_dbscan.py --input_path ${input_base_path}
 fi
 
-echo "6. Start training nerfstudio"
+echo "7. Start training nerfstudio"
 python arkit_utils/run_nerfstudio_dataset.py --input_path ${input_base_path} --method "${methods[@]}"
